@@ -11,8 +11,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li>
-                    <a href="{{route('announcement.create')}}">Crea un annuncio</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('announcement.new')}}">Crea un annuncio</a>
                 </li>
             </ul>
 
