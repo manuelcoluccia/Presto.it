@@ -1,18 +1,20 @@
 <x-layouts>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>Inserisci nuovo annuncio</h1>
-            </div>
-        </div>
+<div class="container mt-5">
+  <div class="row mt-5">
+    <div class="col-12 mt-5">
+      <h2 class="text-green display-4 text-center font-italic mt-4">Inserisci <span class="font-weight-bold">annuncio</span></h2>
+    </div>
+  </div>
+</div>
+  <div class="container mt-5">
         <div class="row">
             <div class="col-12">
                     <form action="{{route('announcement.create')}}" method="POST">
                         @csrf   
 
                           <div  class="mb-3">
-                            <label for="category" class="form-label">categoria</label>
-                            <select class="form-select" name="category" id="category" >
+                            <label for="category" class="form-label">Categoria</label>
+                            <select class="form-select form-control" name="category" id="category" >
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}">
                                     {{-- {{old('category')==$category->id ? 'selected':''}}> --}}

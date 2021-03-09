@@ -10002,3 +10002,133 @@ h3 {
     border-color: #dee2e6;
   }
 }
+:root {
+  --aqua: #9acccf;
+  --light: #DFF6E9;
+  --blue-dark: #093a72;
+  --blue-light: #004a8f;
+  --white: #edf8fd;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Roboto", sans-serif;
+  color: var(--blue-light);
+}
+
+body {
+  background-color: var(--white);
+}
+
+.navbar-presto {
+  color: var(--blue-light);
+  height: 80px;
+  transition: all 0.4s;
+}
+
+.navbar-collapse {
+  transition: all 0.4s;
+}
+
+.navbar-presto .navbar-brand {
+  font-weight: 800;
+  color: var(--blue-light);
+}
+
+.navbar-presto a {
+  color: var(--blue-dark);
+  transition: 0.4s;
+}
+
+.navbar-presto a:hover {
+  color: var(--blue-dark);
+  border-bottom: 3px solid var(--blue-dark);
+  margin-bottom: -3px;
+  font-weight: 600;
+}
+
+.btn-outline-blue-dark {
+  color: var(--blue-dark);
+  border: 2px solid var(--blue-dark);
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.btn-outline-blue-dark:hover {
+  background-color: var(--blue-dark);
+  color: var(--aqua);
+}
+
+.btn-outline-blue-light {
+  color: var(--blue-light);
+  border: 2px solid var(--blue-light);
+  font-weight: 600;
+}
+
+.btn-outline-blue-light:hover {
+  background-color: var(--blue-light);
+  color: var(--aqua);
+}
+
+.text-blue-dark {
+  color: var(--blue-dark);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-blue-light {
+  color: var(--blue-light);
+}
+
+.bg-presto-light {
+  background-color: var(--light);
+}
+
+.bg-presto-aqua {
+  background-color: var(--aqua);
+}
+
+.size-logo {
+  font-size: 20px;
+}
+
+#toggle-menu {
+  transition: 0.4s;
+}
+
+.masthead {
+  background-color: var(--light);
+  height: 100vh;
+  min-height: 500px;
+  border-bottom: 3px solid var(--blue-light);
+}
+
+.ecommerce {
+  width: 700px;
+}
+
+.card-presto {
+  background-color: var(--aqua);
+  min-height: 150px;
+  border: solid 3px;
+  border-radius: 50px;
+}
+
+.card-presto:hover {
+  background-color: var(--light);
+  border: solid 3px var(--blue-dark);
+}
+
+.btn-like:hover {
+  color: var(--blue-light);
+}
+
+.btn-like:focus {
+  outline: none;
+  box-shadow: none;
+}

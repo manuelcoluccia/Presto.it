@@ -1,2 +1,2 @@
 require('./bootstrap');
-require('./miojs');
+require('./miojs.js');
