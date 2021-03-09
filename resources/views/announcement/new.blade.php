@@ -8,7 +8,21 @@
         <div class="row">
             <div class="col-12">
                     <form action="{{route('announcement.create')}}" method="POST">
-                        @csrf
+                        @csrf   
+
+                          <div  class="mb-3">
+                            <label for="category" class="form-label">categoria</label>
+                            <select class="form-select" name="category" id="category" >
+                                @foreach ($categories as $category)
+                                    <option value="{{$category->id}}">
+                                    {{-- {{old('category')==$category->id ? 'selected':''}}> --}}
+                                    {{$category->name}}
+                                    </option>
+                                    
+                                @endforeach
+                              </select>
+                          </div>
+
                         <div class="mb-3">
                           <label for="title" class="form-label">Titolo</label>
                           <input type="text" class="form-control" @error('title') is-invalid @enderror value="{{old('title')}}" id="title" name="title" required autofocus>
