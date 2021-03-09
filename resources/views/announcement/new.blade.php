@@ -33,6 +33,15 @@
                           @enderror
                         </div>
                         <div class="mb-3">
+                          <label for="price" class="form-label">Prezzo</label>
+                          <input type="text" class="form-control" @error('price') is-invalid @enderror value="{{old('price')}}" id="price" name="price" required autofocus>
+                          @error('price')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{$message}}</strong>
+                            </span>
+                          @enderror
+                        </div>
+                        <div class="mb-3">
                           <label for="body" class="form-label">Descrizione</label>
                           <textarea class="form-control" @error('body') is-invalid @enderror name="body" id="body" cols="30" rows="10" required autofocus>{{old('body')}}</textarea>
                           @error('body')

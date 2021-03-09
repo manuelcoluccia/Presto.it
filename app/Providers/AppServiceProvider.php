@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Announcement;
 use App\Models\Category;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\Presets\Vue;
@@ -28,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $categories = Category::all();
         View::share('categories', $categories);
+        Paginator::useBootstrap();
     }
 }
