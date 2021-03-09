@@ -6,6 +6,7 @@ use App\Http\Requests\AnnouncementRequest;
 use App\Models\Announcement;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -41,6 +42,7 @@ class HomeController extends Controller
         $a->title = $request->input('title');
         $a->body = $request->input('body');
         $a->category_id=$request->input('category');
+        $a->user_id= Auth::id();
         $a->save();
        
         return redirect('/')->with('announcement.create.success','ok');
