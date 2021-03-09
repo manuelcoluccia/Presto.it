@@ -12,7 +12,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('announcement.new')}}">Crea un annuncio</a>
+                    <a class="nav-link" href="{{route('announcement.new')}}">Inserisci annuncio</a>
                 </li>
             </ul>
 
