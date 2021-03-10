@@ -25,6 +25,7 @@ class AnnouncementRequest extends FormRequest
     {
         return [
             'title'=>'required|max:100|string',
+            'price'=>'required|string',
             'body'=>'required|max:1000|string',
         ];
     }

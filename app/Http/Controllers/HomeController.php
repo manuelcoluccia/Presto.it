@@ -40,6 +40,7 @@ class HomeController extends Controller
     {
         $a = new Announcement();
         $a->title = $request->input('title');
+        $a->price = $request->input('price');
         $a->body = $request->input('body');
         $a->category_id=$request->input('category');
         $a->user_id= Auth::id();
