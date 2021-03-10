@@ -7,7 +7,7 @@
   </div>
 </div>
   <div class="container mt-5">
-        <div class="row">
+        <div class="row form-group">
             <div class="col-12">
                     <form action="{{route('announcement.create')}}" method="POST">
                         @csrf   
@@ -19,41 +19,43 @@
                                     <option value="{{$category->id}}">
                                     {{-- {{old('category')==$category->id ? 'selected':''}}> --}}
                                     {{$category->name}}
-                                    </option>
-                                    
+                                    </option>                                    
                                 @endforeach
                               </select>
                           </div>
 
                         <div class="mb-3">
                           <label for="title" class="form-label">Titolo</label>
-                          <input type="text" class="form-control" @error('title') is-invalid @enderror value="{{old('title')}}" id="title" name="title" required autofocus>
+                          <input type="text" class="form-control" @error('title') is-invalid @enderror value="{{old('title')}}" id="title" name="title"  autofocus>
                           @error('title')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="" role="alert">
                                 <strong>{{$message}}</strong>
                             </span>
                           @enderror
                         </div>
+
                         <div class="mb-3">
                           <label for="price" class="form-label">Prezzo</label>
-                          <input type="text" class="form-control" @error('price') is-invalid @enderror value="{{old('price')}}" id="price" name="price" required autofocus>
+                          <input type="text" class="form-control" @error('price') is-invalid @enderror value="{{old('price')}}" id="price" name="price"  autofocus>
                           @error('price')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="" role="alert">
                                 <strong>{{$message}}</strong>
                             </span>
                           @enderror
                         </div>
+
                         <div class="mb-3">
                           <label for="body" class="form-label">Descrizione</label>
-                          <textarea class="form-control" @error('body') is-invalid @enderror name="body" id="body" cols="30" rows="10" required autofocus>{{old('body')}}</textarea>
+                          <textarea class="form-control" @error('body') is-invalid @enderror name="body" id="body" cols="30" rows="10"  autofocus>{{old('body')}}</textarea>
                           @error('body')
-                              <span class="invalid-feedback" role="alert">
+                              <span class="" role="alert">
                                   <strong>{{$message}}</strong>
                               </span>
                           @enderror
                         </div>
+
                         <button type="submit" class="btn btn-primary">Inserisci annuncio</button>
-                      </form>
+                    </form>
             </div>
         </div>
     </div>

@@ -37,7 +37,8 @@ class HomeController extends Controller
     }
 
     public function createAnnouncement(AnnouncementRequest $request)
-    {
+    {   
+        dd($request->all());
         $a = new Announcement();
         $a->title = $request->input('title');
         $a->price = $request->input('price');
