@@ -32,13 +32,13 @@ class HomeController extends Controller
 
     public function newAnnouncement()
     {
-       
+
         return view('announcement.new', );
     }
 
     public function createAnnouncement(AnnouncementRequest $request)
-    {   
-        dd($request->all());
+    {
+
         $a = new Announcement();
         $a->title = $request->input('title');
         $a->price = $request->input('price');
@@ -46,7 +46,7 @@ class HomeController extends Controller
         $a->category_id=$request->input('category');
         $a->user_id= Auth::id();
         $a->save();
-       
+
         return redirect('/')->with('announcement.create.success','ok');
     }
 

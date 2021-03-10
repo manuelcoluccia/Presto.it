@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::post('/announcement.create', [HomeController::class, 'createAnnouncement'
 
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
+
+Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.home');

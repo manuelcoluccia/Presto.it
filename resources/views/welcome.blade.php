@@ -4,7 +4,14 @@
             <p class="mt-5">Annuncio creato correttamente</p>
         </div>
     @endif
-    
+
+    @if (session('message'))
+    <div class="alert alert-danger text-center mt-5">
+        <p class="mt-5">Accesso non consentito - solo per revisori</p>
+    </div>
+   @endif
+
+
     <header class="masthead">
       <div class="container h-100">
         <div class="row h-100 align-items-center">
@@ -19,8 +26,8 @@
         </div>
       </div>
   </header>
-    
-    
+
+
     <!-- Card categorie -->
 
     <div class="container">
@@ -79,8 +86,8 @@
       </div>
   </div>
 
-    
-    
+
+
     <div class="container mt-5">
          <div class="row text-center mt-5">
            <div class="col-12 my-5">
@@ -93,7 +100,7 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-md-8">
                         <div class="card ">
-                            <div class="card-header font-weight-bold h3 bg-presto-aqua">{{$announcement->title}}</div>                                                    
+                            <div class="card-header font-weight-bold h3 bg-presto-aqua">{{$announcement->title}}</div>
                               <div class="card-body">
                                 <p>
                                   <img src="https://picsum.photos/300/150" alt="" class="rounded float-right">{{$announcement->body}}
@@ -107,11 +114,11 @@
                                   ])}}"
                                   >{{$announcement->category->name}}</a></strong>
                                   <i>{{$announcement->created_at->format('d/m/y')}} - {{$announcement->user->name}}</i>
-                                  
+
                               </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
           @endforeach
     </div>
