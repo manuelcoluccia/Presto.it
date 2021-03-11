@@ -18,7 +18,10 @@
           <div class="col-12 text-center mb-5 col-lg-5">
             <h1 class="font-italic">Benvenuto su <span class="font-weight-bold ">Presto!</span></h1>
             <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
-            <button class="btn btn-outline-blue-dark mt-2 p-3 font-weight-bold">Inserisci un annuncio</button>
+           <form action="{{route('search')}}" method="GET">
+               <input type="text" name="q" style="width:500px;">
+               <button class="btn btn-danger" type="submit">Ricerca</button>
+           </form>
           </div>
           <div class="col-12 col-lg-7 ">
               <img class="ecommerce img-fluid" src="./img/Online shopping _Isometric.svg" alt="">
