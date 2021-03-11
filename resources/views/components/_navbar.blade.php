@@ -52,7 +52,7 @@
                     @if (Auth::user()->is_revisor)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('revisor.home') }}">Revisor home
-                                <span class="badge badge-pill badge-warning">{{\App\Announcement::ToBeRevisionedCount()}}</span>
+                                <span class="badge badge-pill badge-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
                             </a>
                         </li>
                     @endif
@@ -77,9 +77,6 @@
                 </ul>
             </div>
 
-        <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Cerca annuncio..." aria-label="Search">
-        <button class="btn btn-outline-blue-dark my-2 my-sm-0" type="submit">Cerca</button>
-        </form>
+      
     </div>
 </nav>
