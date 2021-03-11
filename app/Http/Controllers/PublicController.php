@@ -13,7 +13,7 @@ class PublicController extends Controller
         $announcements = Announcement::where('is_accepted',true)
         ->orderBy('created_at' , 'desc')
         ->take(5)->get();
-        
+
         return view('welcome' , compact('announcements'));
     }
 
@@ -31,6 +31,13 @@ class PublicController extends Controller
     {
         $q = $request->input('q');
         $announcements = Announcement::search($q)->get();
-        return view('search_results', compact('q', 'announcements')); 
+        return view('search_results', compact('q', 'announcements'));
     }
+
+    public function show(Announcement $announcement){
+        return view('announcement.show',compact('announcement'));
+    }
+
 }
+
+

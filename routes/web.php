@@ -25,6 +25,7 @@ Route::get('/announcement.new', [HomeController::class, 'newAnnouncement'])->nam
 Route::post('/announcement.create', [HomeController::class, 'createAnnouncement'])->name('announcement.create');
 
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
+Route::get('/announcement/show/{announcement}',[PublicController::class, 'show'])->name('announcement.show');
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
 Route::get('/search',[PublicController::class, 'search'])->name('search');
 // Route::get('/search/results', [PublicController::class, 'searchResults'])->name('search_results');

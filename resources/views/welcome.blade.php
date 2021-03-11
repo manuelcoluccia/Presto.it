@@ -117,7 +117,7 @@
                                   ])}}"
                                   >{{$announcement->category->name}}</a></strong>
                                   <i>{{$announcement->created_at->format('d/m/y')}} - {{$announcement->user->name}}</i>
-
+                                  <a class="btn btn-success" href="{{route('announcement.show',$announcement)}}">Visualizza</a>
                               </div>
                         </div>
                     </div>
