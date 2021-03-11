@@ -25,6 +25,12 @@ class PublicController extends Controller
         ->orderBy('created_at' , 'desc')
         ->paginate(5);
         return view('announcements', compact('category', 'announcements'));
-        
+    }
+
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+        $announcements = Announcement::search($q)->get();
+        return view('search_results', compact('q', 'announcements')); 
     }
 }

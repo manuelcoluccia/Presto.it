@@ -27,11 +27,14 @@ Route::post('/announcement.create', [HomeController::class, 'createAnnouncement'
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
 Route::get('/search',[PublicController::class, 'search'])->name('search');
+// Route::get('/search/results', [PublicController::class, 'searchResults'])->name('search_results');
+
 //Revisor area
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.home');
 
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.reject');
+
 
 
 
