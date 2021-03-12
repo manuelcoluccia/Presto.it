@@ -1,8 +1,7 @@
 <nav id="navbar-presto" class="navbar navbar-expand-lg navbar-presto fixed-top shadow bg-presto-dark ">
-    <a class="navbar-brand" href="{{ url('/') }}">
-        <h2 class="navbar-brand size-logo mt-0"><i class="fas fa-shopping-cart fa-2x"></i>
-            <span class="h2 font-weight-bold">Presto!</span></h2>
-    </a>
+        <h2 class="navbar-brand size-logo mr-3 mt-2"><i class="fas fa-shopping-cart fa-1x"></i>
+            <span class="h3 font-weight-bold">Presto!</span>
+        </h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i id="toggle-menu" class="fas fa-times fa-2x text-green"></i>
     </button>
@@ -11,6 +10,10 @@
 
                  <!-- Left Side Of Navbar -->
                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/')}}">Home</a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            Categorie

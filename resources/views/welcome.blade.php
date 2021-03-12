@@ -16,10 +16,10 @@
       <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-5 ml-auto">
-                <img class="ecommerce img-fluid" src="./img/masthead2.png" alt="">
+                <img class="ecommerce img-fluid" src="./img/logo.png" alt="">
             </div>
           <div class="col-12 col-lg-7 text-center mb-5 pr-5 ">
-            <h1 class="font-italic home-title">Benvenuto su <span class="font-weight-bold ">Presto!</span></h1>
+            <h1 class="font-italic home-title text-white">Benvenuto su <span class="font-weight-bold text-blue-dark ">Presto!</span></h1>
             <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
            <form action="{{route('search')}}" method="GET">
                <input type="text" name="q"  class="search-bar">
