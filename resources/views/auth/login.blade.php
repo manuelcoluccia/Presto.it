@@ -1,5 +1,5 @@
 <x-layouts>
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8 mt-5">
             <div class="card">
@@ -68,4 +68,5 @@
         </div>
     </div>
 </div>
+<div style="height:500px"></div>
 </x-layouts>

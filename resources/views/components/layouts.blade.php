@@ -32,6 +32,7 @@
         <main class="py-4">
             {{$slot}}
         </main>
+    <x-_footer />    
     </div>
     @stack('script')
 </body>

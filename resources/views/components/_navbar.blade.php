@@ -1,6 +1,7 @@
 <nav id="navbar-presto" class="navbar navbar-expand-lg navbar-presto fixed-top shadow bg-presto-dark ">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <h2 class="navbar-brand size-logo"><i class="fas fa-shipping-fast fa-2x mx-2"></i><span class="h2 font-weight-bold">Presto!</span></h2>
+        <h2 class="navbar-brand size-logo mt-0"><i class="fas fa-shopping-cart fa-2x"></i>
+            <span class="h2 font-weight-bold">Presto!</span></h2>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i id="toggle-menu" class="fas fa-times fa-2x text-green"></i>

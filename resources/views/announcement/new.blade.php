@@ -1,6 +1,6 @@
 <x-layouts>
-<div class="container mt-5">
-  <div class="row mt-5">
+<div class="container mt-5 mb-5">
+  <div class="row mt-5 ">
     <div class="col-12 mt-5">
       <h2 class="text-green display-4 text-center font-italic mt-4">Inserisci <span class="font-weight-bold">annuncio</span></h2>
     </div>
@@ -8,7 +8,7 @@
 </div>
   <div class="container mt-5">
         <div class="row form-group">
-            <div class="col-12">
+            <div class="col-12 mb-5">
                     <form action="{{route('announcement.create')}}" method="POST">
                         @csrf   
 
@@ -54,7 +54,7 @@
                           @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Inserisci annuncio</button>
+                        <button type="submit" class="btn btn-outline-blue-dark">Inserisci annuncio</button>
                     </form>
             </div>
         </div>

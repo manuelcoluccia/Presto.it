@@ -6,7 +6,7 @@ menuButton.addEventListener('click', function(){
 
 
 
-document.addEventListener('scroll', function(){
+/* document.addEventListener('scroll', function(){
     let scrolled = window.pageYOffset
 
     let navbar = document.querySelector('#navbar-presto')
@@ -25,7 +25,7 @@ document.addEventListener('scroll', function(){
         navbarContent.classList.remove('bg-presto-aqua')
         navbarContent.classList.add('bg-presto-light')
     }
-})
+}) */
 
 let likeButtons = document.querySelectorAll('.btn-like')
 

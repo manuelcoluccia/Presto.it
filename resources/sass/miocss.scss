@@ -1,6 +1,6 @@
 :root {
-    --aqua : #9acccf;
-    --light : #DFF6E9;
+    --aqua : #e4e2e0;
+    --light : #da6b43e3;
     --blue-dark : #093a72;
     --blue-light : #004a8f;
     --white : #edf8fd;
@@ -20,6 +20,7 @@ body {
 }
 
 .navbar-presto {
+    background-color:(var(--aqua)) ;
     color: var(--blue-light);
     height: 70px;
     transition: all 0.4s;
@@ -100,10 +101,14 @@ body {
 }
 
 .masthead {
-    background-color: var(--light);
+    background: var(--light);
     height: 100vh;
     min-height: 500px;
     border-bottom: 3px solid var(--blue-light);
+}
+
+.home-title{
+    font-size: 80px;
 }
 
 .ecommerce {
@@ -131,5 +136,29 @@ body {
 .btn-like:focus {
     outline: none;
     box-shadow: none;
+}
+
+.search-bar{
+    border: 2px solid var(--blue-dark);
+    border-radius: 30px;
+    height: 50px;
+    width:500px;
+    background-color: #add5f8be;
+    outline:none!important;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.btn-search{
+    
+    border-radius: 30px;
+    height: 50px;
+    color: var(--white);
+    background-color: var(--blue-light);
+    position: relative;
+    right: 71px;
+    bottom: 3px;
+    
+
 }
 

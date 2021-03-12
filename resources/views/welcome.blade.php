@@ -13,19 +13,20 @@
 
 
     <header class="masthead">
-      <div class="container h-100">
+      <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
-          <div class="col-12 text-center mb-5 col-lg-5">
-            <h1 class="font-italic">Benvenuto su <span class="font-weight-bold ">Presto!</span></h1>
+            <div class="col-12 col-lg-5 ml-auto">
+                <img class="ecommerce img-fluid" src="./img/masthead2.png" alt="">
+            </div>
+          <div class="col-12 col-lg-7 text-center mb-5 pr-5 ">
+            <h1 class="font-italic home-title">Benvenuto su <span class="font-weight-bold ">Presto!</span></h1>
             <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
            <form action="{{route('search')}}" method="GET">
-               <input type="text" name="q" style="width:500px;">
-               <button class="btn btn-danger" type="submit">Ricerca</button>
+               <input type="text" name="q"  class="search-bar">
+               <button class="btn btn-search" type="submit">Cerca</button>
            </form>
           </div>
-          <div class="col-12 col-lg-7 ">
-              <img class="ecommerce img-fluid" src="./img/Online shopping _Isometric.svg" alt="">
-          </div>
+
         </div>
       </div>
   </header>
