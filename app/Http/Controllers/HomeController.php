@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AnnouncementRequest;
-use App\Models\Announcement;
 use App\Models\Category;
+use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Mail\RequestReceived;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
@@ -48,6 +50,21 @@ class HomeController extends Controller
         $a->save();
 
         return redirect('/')->with('announcement.create.success','ok');
+    }
+   
+    public function revisorCreate()
+    {
+        return view('revisor.create');
+    }
+
+    public function revisorStore(Request $request)
+    { 
+        $name = $request->input('name'); 
+        $email = $request->input('email');
+        $body = $request->input('body');
+        $contatto = [$name,$email,$body];
+        Mail::to($request->user())->send(new RequestReceived($contatto));
+        return redirect()->back()->with('message', 'richiesta inviata');
     }
 
 }

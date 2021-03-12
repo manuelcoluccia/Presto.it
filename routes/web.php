@@ -36,6 +36,9 @@ Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.ho
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.reject');
 
+Route::get('/revisor/create',[HomeController::class, 'revisorCreate'])->name('revisor.create');
+Route::post('/revisor/store', [HomeController::class, 'revisorStore'])->name('revisor.store');
+
 
 
 

@@ -93,7 +93,7 @@
   
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Link 1</a>
+                <a href="{{Route('revisor.create')}}" class="text-white">Diventa Revisore</a>
               </li>
               <li>
                 <a href="#!" class="text-white">Link 2</a>
