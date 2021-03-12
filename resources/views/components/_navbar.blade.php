@@ -6,7 +6,7 @@
         <i id="toggle-menu" class="fas fa-times fa-2x text-green"></i>
     </button>
 
-    <div class="collapse navbar-collapse bg-presto-dark" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse bg-presto-aqua px-3" id="navbarSupportedContent">
 
                  <!-- Left Side Of Navbar -->
                  <ul class="navbar-nav mr-auto">
@@ -35,7 +35,7 @@
                     </li>
                 </ul>
     </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse bg-presto-aqua px-3" id="navbarSupportedContent">
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">

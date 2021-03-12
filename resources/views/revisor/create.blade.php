@@ -4,6 +4,7 @@
       <div class="row mt-5 ">
         <div class="col-12 mt-5">
           <h2 class="text-green display-4 text-center font-italic mt-4">Diventa<span class="font-weight-bold">Revisore</span></h2>
+          
         </div>
       </div>
     </div>

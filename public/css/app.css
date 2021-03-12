@@ -10142,7 +10142,7 @@ body {
   border: 2px solid var(--blue-dark);
   border-radius: 30px;
   height: 50px;
-  width: 500px;
+  width: auto;
   background-color: #add5f8be;
   outline: none !important;
   font-size: 20px;

@@ -9,24 +9,30 @@
     <div class="alert alert-danger text-center mt-5">
         <p class="mt-5">Accesso non consentito - solo per revisori</p>
     </div>
+    @elseif (session('message2'))
+    <div class="alert alert-success text-center mt-5">
+        <p class="mt-5">Richiesta inviata</p>
+    </div>
    @endif
-
-
+   
     <header class="masthead">
       <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-lg-5 ml-auto">
                 <img class="ecommerce img-fluid" src="./img/logo.png" alt="">
             </div>
-          <div class="col-12 col-lg-7 text-center mb-5 pr-5 ">
-            <h1 class="font-italic home-title text-white">Benvenuto su <span class="font-weight-bold text-blue-dark ">Presto!</span></h1>
-            <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
-           <form action="{{route('search')}}" method="GET">
-               <input type="text" name="q"  class="search-bar">
-               <button class="btn btn-search" type="submit">Cerca</button>
-           </form>
+            <div class="col-12 col-lg-7 text-center mb-5 ">
+                <h1 class="font-italic home-title text-white">Benvenuto su <span class="font-weight-bold text-blue-dark ">Presto!</span></h1>
+                <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
+                <div class="row">
+                    <div class="col-5 col-lg-7">
+                        <form action="{{route('search')}}" method="GET">
+                            <input type="text" name="q"  class="search-bar">
+                            <button class="btn btn-search" type="submit">Cerca</button>
+                        </form>
+                    </div>
+                </div>
           </div>
-
         </div>
       </div>
   </header>

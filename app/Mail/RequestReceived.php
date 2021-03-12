@@ -16,6 +16,9 @@ class RequestReceived extends Mailable
      *
      * @return void
      */
+
+    public $contatto;
+     
     public function __construct($contatto)
     {
         $this->contatto=$contatto;
