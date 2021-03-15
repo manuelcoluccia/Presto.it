@@ -1,6 +1,6 @@
 <nav id="navbar-presto" class="navbar navbar-expand-lg navbar-presto fixed-top shadow bg-presto-dark ">
-        <h2 class="navbar-brand size-logo mr-3 mt-2"><i class="fas fa-shopping-cart fa-1x"></i>
-            <span class="h3 font-weight-bold">Presto!</span>
+        <h2 class="navbar-brand size-logo mr-3 mt-2"><i class="fas fa-shopping-cart fa-1x text-light1"></i>
+            <span class="h3 font-weight-bold text-light1">Presto!</span>
         </h2>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i id="toggle-menu" class="fas fa-times fa-2x text-green"></i>
@@ -19,13 +19,13 @@
                            Categorie
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                             <a class="dropdown-item nav-link" href="{{route('public.announcements.category',[
                                'name'=>$category->name,
                                'id'=>$category->id
                               ])}}">
-                              {{$category->name}}
+                              <span class="text-aqua">{{$category->name}}</span>
                             </a>
                         @endforeach
                         </div>

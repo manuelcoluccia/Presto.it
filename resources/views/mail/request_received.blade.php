@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1>Richiesta ricevuta</h1>
+            <h1>Nuova richiesta per revisore</h1>
         </div>
     </div>
     <div class="row">

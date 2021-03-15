@@ -10003,9 +10003,9 @@ h3 {
   }
 }
 :root {
-  --aqua: #e4e2e0;
+  --aqua: #011157;
   --light: #da6b43e3;
-  --blue-dark: #093a72;
+  --blue-dark: #dae9fa;
   --blue-light: #004a8f;
   --white: #edf8fd;
 }
@@ -10026,6 +10026,7 @@ body {
 .navbar-presto {
   background-color: var(--aqua);
   color: var(--blue-light);
+  box-shadow: 3px 23px 19px 2px rgba(0, 0, 0, 0.83);
   height: 65px;
   transition: all 0.4s;
 }
@@ -10086,6 +10087,14 @@ body {
   color: var(--blue-light);
 }
 
+.text-light1 {
+  color: var(--light);
+}
+
+.text-aqua {
+  color: var(--aqua);
+}
+
 .bg-presto-light {
   background-color: var(--light);
 }
@@ -10098,12 +10107,16 @@ body {
   font-size: 20px;
 }
 
+.border-white {
+  text-shadow: 1px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
 #toggle-menu {
   transition: 0.4s;
 }
 
 .masthead {
-  background: var(--light);
+  background: linear-gradient(103deg, rgba(206, 115, 11, 0.753) 0%, #f48013 100%);
   height: 100vh;
   min-height: 500px;
   border-bottom: 3px solid var(--blue-light);
@@ -10122,11 +10135,25 @@ body {
   min-height: 150px;
   border: solid 3px;
   border-radius: 50px;
+  box-shadow: 6px 15px 19px 1px rgba(0, 0, 0, 0.7);
 }
 
 .card-presto:hover {
   background-color: var(--light);
   border: solid 3px var(--blue-dark);
+}
+
+.card-annunci {
+  box-shadow: 6px 15px 19px 1px rgba(0, 0, 0, 0.7);
+}
+
+.btn-card {
+  background-color: var(--white);
+  color: var(--light);
+  border-radius: 10px;
+  width: 80%;
+  margin-left: 25px;
+  margin-top: 20px;
 }
 
 .btn-like:hover {
