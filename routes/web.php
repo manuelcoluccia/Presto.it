@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/announcement.new', [HomeController::class, 'newAnnouncement'])->name('announcement.new');
 Route::post('/announcement.create', [HomeController::class, 'createAnnouncement'])->name('announcement.create');
+Route::post('/announcement/images/upload', [HomeController::class, 'uploadImage'])->name('announcement.images.upload');
 
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
 Route::get('/announcement/show/{announcement}',[PublicController::class, 'show'])->name('announcement.show');

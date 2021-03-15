@@ -9,9 +9,14 @@
   <div class="container mt-5">
         <div class="row form-group">
             <div class="col-12 mb-5">
+              <h3>DEBUG:: SECRET{{$uniqueSecret}}</h3>
                     <form action="{{route('announcement.create')}}" method="POST">
                         @csrf   
-
+                         <input
+                         type="hidden"
+                         name="uniqueSecret"
+                         value="{{$uniqueSecret}}">
+                         
                           <div  class="mb-3">
                             <label for="category" class="form-label">Categoria</label>
                             <select class="form-select form-control" name="category" id="category" >
@@ -53,7 +58,17 @@
                               </span>
                           @enderror
                         </div>
-
+                        <div class="form-group row">
+                          <label for="images" class="col-md-12 col-form-label text-md-left">Immagini</label>
+                            <div class="col-md-12">
+                              <div class="dropzone" id="drophere"></div>
+                               @error('images')
+                                   <span role="alert">
+                                     <strong>{{$message}}</strong>
+                                   </span>
+                               @enderror
+                            </div>
+                        </div>
                         <button type="submit" class="btn btn-outline-blue-dark">Inserisci annuncio</button>
                     </form>
             </div>
