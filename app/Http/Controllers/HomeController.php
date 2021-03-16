@@ -36,9 +36,11 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function newAnnouncement()
+    public function newAnnouncement(Request $request)
     {
-        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        $uniqueSecret = $request->old(
+            'uniqueSecret',
+            base_convert(sha1(uniqid(mt_rand())), 16, 36));
 
         return view('announcement.new', compact('uniqueSecret'));
     }
@@ -66,7 +68,7 @@ class HomeController extends Controller
            $i = new AnnouncementImage();
 
            $fileName = basename($image);
-           $newFileName = "/public/announcements/{$a->id}/{$fileName}";
+           $newFileName = "public/announcements/{$a->id}/{$fileName}";
            Storage::move($image,$newFileName);
 
            $i->file=$newFileName;
@@ -80,11 +82,11 @@ class HomeController extends Controller
     }
 
     public function uploadImage(Request $request){
-         
+
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}", $fileName);
-        return response()->json( 
+        return response()->json(
               [
                   'id' => $fileName
               ]
@@ -103,15 +105,36 @@ class HomeController extends Controller
 
         return response()->json('ok');
     }
-   
+
+
+    public function getImages(Request $request){
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $images = session()->get("images.{$uniqueSecret}",[]);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
+
+        $images = array_diff($images,$removedImages);
+
+        $data=[];
+
+        foreach($images as $image){
+            $data[]=[
+                'id'=>$image,
+                'src'=>Storage::url($image)
+            ];
+        }
+        return response()->json($data);
+    }
+
+
     public function revisorCreate()
     {
         return view('revisor.create');
     }
 
     public function revisorStore(Request $request)
-    { 
-    //     $name = $request->input('name'); 
+    {
+    //     $name = $request->input('name');
     //     $email = $request->input('email');
     //     $body = $request->input('body');
         // $contatto = [$name,$email,$body];
@@ -121,6 +144,6 @@ class HomeController extends Controller
     }
 
 
-     
+
 
 }

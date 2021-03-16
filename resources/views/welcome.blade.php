@@ -14,7 +14,7 @@
         <p class="mt-5">Richiesta inviata</p>
     </div>
    @endif
-   
+
     <header class="masthead">
       <div class="container-fluid h-100">
         <div class="row h-100 align-items-center">

@@ -24,7 +24,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/announcement.new', [HomeController::class, 'newAnnouncement'])->name('announcement.new');
 Route::post('/announcement.create', [HomeController::class, 'createAnnouncement'])->name('announcement.create');
 Route::post('/announcement/images/upload', [HomeController::class, 'uploadImage'])->name('announcement.images.upload');
-Route::delete('announcement/images/remove', [HomeController::class, 'removeImage'])->name('announcement.images.remove');
+Route::delete('/announcement/images/remove', [HomeController::class, 'removeImage'])->name('announcement.images.remove');
+Route::get('/announcement/images',[HomeController::class, 'getImages'])->name('announcement.images');
 
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
 Route::get('/announcement/show/{announcement}',[PublicController::class, 'show'])->name('announcement.show');

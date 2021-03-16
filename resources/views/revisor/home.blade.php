@@ -4,7 +4,7 @@
         <div class="row justify-content-center my-5 mt-5">
             <div class="col-md-10 mt-5">
                 <div class="card">
-                    <div class="card-header font-weight-bold h3 bg-presto-aqua">Annuncio #{{$announcement->id}}</div>                                                    
+                    <div class="card-header font-weight-bold h3 bg-presto-aqua">Annuncio #{{$announcement->id}}</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4"><h3>Utente</h3></div>
@@ -33,29 +33,27 @@
 
                             <div class="row">
                                 <div class="col-md-4"><h3>Immagini</h3></div>
-                                <div class="col-md-8">
+                                <div class="col-md-10">
+                                    @foreach($announcement->images as $image)
                                     <div class="row mb-2">
                                         <div class="col-md-4">
-                                            <img src="https://via.placeholder.com/300x150.png" alt="">
+
+                                            <img src="{{Storage::url($image->file)}}" class="rounded" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            --- ---- -----
+                                            {{$image->id}} <br>
+                                            {{$image->file}} <br>
+                                            {{Storage::url($image->file)}} <br>
                                         </div>
                                     </div>
-                                    <div class="row mb-2">
-                                    <div class="col-md-4">
-                                        <img src="https://via.placeholder.com/300x150.png" alt="">
-                                    </div>
-                                    <div class="col-md-8">
-                                        --- ---- -----
-                                    </div>
+                                    @endforeach
                                 </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
                 </div>
             </div>
-        </div>                
+        </div>
        <div class="row justify-content-center mt-5">
            <div class="col-md-6 ml-2 text-left">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reject">
@@ -66,13 +64,13 @@
             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#accept">
                 Accetta
             </button>
-               
-            </div>
-       </div> 
-    </div>
-    
 
-    
+            </div>
+       </div>
+    </div>
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="reject" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -122,4 +120,4 @@
     @else
         <h1 class="text-center mt-5">Non ci sono annunci da revisionare</h1>
     @endif
-</x-layouts>   
+</x-layouts>

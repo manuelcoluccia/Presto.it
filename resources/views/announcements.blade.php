@@ -13,10 +13,13 @@
               <div class="row justify-content-center my-5">
                   <div class="col-md-8">
                       <div class="card">
-                          <div class="card-header font-weight-bold h3 bg-presto-aqua">{{$announcement->title}}</div>                                                    
+                          <div class="card-header font-weight-bold h3 bg-presto-aqua">{{$announcement->title}}</div>
                             <div class="card-body">
                               <p>
-                                <img src="https://picsum.photos/300/150" alt="" class="rounded float-right">{{$announcement->body}}
+                                @foreach ($announcement->images as $image )
+                                <img src="{{Storage::url($image->file)}}" class="rounded float-right" alt="">
+
+                                @endforeach
                               </p>
                               <p class="font-weight-bold text-dark">Prezzo: {{$announcement->price}} €</p>
                             </div>
@@ -27,11 +30,11 @@
                                 ])}}"
                                 >{{$announcement->category->name}}</a></strong>
                                 <i>{{$announcement->created_at->format('d/m/y')}} - {{$announcement->user->name}}</i>
-                                
+
                             </div>
                       </div>
                   </div>
-              </div>                
+              </div>
           </div>
           @endforeach
           <div class="row justify-content-center">
