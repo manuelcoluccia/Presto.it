@@ -52,10 +52,15 @@ class HomeController extends Controller
         $a->body = $request->input('body');
         $a->category_id=$request->input('category');
         $a->user_id= Auth::id();
+
         $a->save();
 
         $uniqueSecret = $request->input('uniqueSecret');
-        $images = session()->get("images.{$uniqueSecret}");
+
+        $images = session()->get("images.{$uniqueSecret}",[]);
+        $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
+
+        $images = array_diff($images, $removedImages);
 
         foreach ($images as $image){
            $i = new AnnouncementImage();
@@ -69,7 +74,8 @@ class HomeController extends Controller
 
            $i->save();
         }
-          File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
+
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect('/')->with('announcement.create.success','ok');
     }
 
@@ -79,7 +85,23 @@ class HomeController extends Controller
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json( 
-               session()->get("images.{$uniqueSecret}"));
+              [
+                  'id' => $fileName
+              ]
+            );
+    }
+
+    public function removeImage(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+
+        $fileName = $request->input('id');
+
+        session()->push("removedimages.{$uniqueSecret}", $fileName);
+
+        Storage::delete($fileName);
+
+        return response()->json('ok');
     }
    
     public function revisorCreate()
