@@ -9,7 +9,6 @@
   <div class="container mt-5">
         <div class="row form-group">
             <div class="col-12 mb-5">
-              <h3>DEBUG:: SECRET{{$uniqueSecret}}</h3>
                     <form action="{{route('announcement.create')}}" method="POST">
                         @csrf   
                          <input

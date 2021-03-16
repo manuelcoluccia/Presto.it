@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Mail\RequestReceived;
 use App\Models\AnnouncementImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Mail;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
 
@@ -58,19 +59,30 @@ class HomeController extends Controller
         $a->save();
 
         $uniqueSecret = $request->input('uniqueSecret');
-
         $images = session()->get("images.{$uniqueSecret}",[]);
         $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
-
         foreach ($images as $image){
            $i = new AnnouncementImage();
 
            $fileName = basename($image);
            $newFileName = "public/announcements/{$a->id}/{$fileName}";
            Storage::move($image,$newFileName);
+            
+           dispatch(new ResizeImage(
+               $newFileName, 
+               300, 
+               150
+           ));
 
+           dispatch(new ResizeImage(
+            $newFileName, 
+            400, 
+            300
+           ));
+
+        
            $i->file=$newFileName;
            $i->announcement_id=$a->id;
 
@@ -85,6 +97,12 @@ class HomeController extends Controller
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+        dispatch(new ResizeImage(
+            $fileName, 
+            120, 
+            120
+        ));
+
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
               [
@@ -120,7 +138,7 @@ class HomeController extends Controller
         foreach($images as $image){
             $data[]=[
                 'id'=>$image,
-                'src'=>Storage::url($image)
+                'src'=>AnnouncementImage::getUrlByFilePath($image, 120, 120)
             ];
         }
         return response()->json($data);

@@ -113,7 +113,10 @@
                             <div class="card-header font-weight-bold h3 bg-presto-aqua text-light1">{{$announcement->title}}</div>
                               <div class="card-body">
                                 <p class="text-dark">
-                                  <img src="https://picsum.photos/300/150" alt="" class="rounded float-right img-fluid">{{$announcement->body}}
+                                    @foreach ($announcement->images as $image)
+                                        <img src="{{$image->getUrl(300, 150)}}" alt="">
+                                    @endforeach
+                                  {{$announcement->body}}
                                 </p>
                                 <p class="class font-weight-bold text-dark">Prezzo: {{$announcement->price}} €</p>
                               </div>

@@ -38,11 +38,9 @@
                                     <div class="row mb-2">
                                         <div class="col-md-4">
 
-                                            <img src="{{Storage::url($image->file)}}" class="rounded" alt="">
+                                            <img src="{{$image->getUrl(300, 150)}}" class="rounded" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                            {{$image->id}} <br>
-                                            {{$image->file}} <br>
                                             {{Storage::url($image->file)}} <br>
                                         </div>
                                     </div>
