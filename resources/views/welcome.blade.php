@@ -22,13 +22,13 @@
                 <img class="ecommerce img-fluid" src="./img/logo.png" alt="">
             </div>
             <div class="col-12 col-lg-7 text-center mb-5 ">
-                <h1 class="font-italic home-title text-white">Benvenuto su <span class="font-weight-bold text-aqua border-white">Presto!</span></h1>
-                <p class="lead p-4 font-weight-bold">Compra e vendi tutto quello che vuoi con pochi e semplici click</p>
+                <h1 class="font-italic home-title text-white">{{__('ui.welcome')}}<span class="font-weight-bold text-aqua border-white">Presto!</span></h1>
+                <p class="lead p-4 font-weight-bold">{{__('ui.intestazione')}}</p>
                 <div class="row">
                     <div class="col-5 col-lg-7">
                         <form action="{{route('search')}}" method="GET">
                             <input type="text" name="q"  class="search-bar">
-                            <button class="btn btn-search" type="submit">Cerca</button>
+                            <button class="btn btn-search" type="submit">{{__('ui.bottone')}}</button>
                         </form>
                     </div>
                 </div>

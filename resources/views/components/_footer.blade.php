@@ -105,8 +105,45 @@
                 <a href="#!" class="text-white">Mappa del sito</a>
               </li>
             </ul>
+
+            <h5 class="text-uppercase">Lingue</h5>
+
+            <ul class="list-unstyled mb-0">
+              
+              <li>
+                <form action="{{route('locale','it')}}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
+                    <span class="flag-icon flag-icon-it"></span>
+                  </button>
+                </form>
+              </li>
+              <li>
+                <form action="{{route('locale','en')}}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
+                    <span class="flag-icon flag-icon-gb"></span>
+                  </button>
+                </form>
+                  
+              </li>
+              <li>
+                <form action="{{route('locale','es')}}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
+                    <span class="flag-icon flag-icon-es"></span>
+                  </button>
+                </form>
+              </li>
+             
+            </ul>
+
           </div>          
         </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          
+        </div>          
+      </div>
         <!--Grid row-->
       </section>
       <!-- Section: Links -->

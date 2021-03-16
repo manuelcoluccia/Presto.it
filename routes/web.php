@@ -32,6 +32,7 @@ Route::get('/announcement/show/{announcement}',[PublicController::class, 'show']
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
 Route::get('/search',[PublicController::class, 'search'])->name('search');
 // Route::get('/search/results', [PublicController::class, 'searchResults'])->name('search_results');
+Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
 
 //Revisor area
 Route::get('/revisor/home',[RevisorController::class,'index'])->name('revisor.home');

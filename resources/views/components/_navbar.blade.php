@@ -16,7 +16,7 @@
 
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                           Categorie
+                           {{__('ui.category_nav')}}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('announcement.new')}}">Inserisci annuncio</a>
+                        <a class="nav-link" href="{{route('announcement.new')}}">{{__('ui.inserisci_annuncio')}}</a>
                     </li>
                 </ul>
     </div>
