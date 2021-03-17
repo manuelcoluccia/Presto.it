@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\AnnouncementRequest;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class HomeController extends Controller
 {
@@ -87,6 +89,9 @@ class HomeController extends Controller
            $i->announcement_id=$a->id;
 
            $i->save();
+
+           dispatch(new GoogleVisionSafeSearchImage($i->id));
+           dispatch(new GoogleVisionLabelImage($i->id));
         }
 
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));

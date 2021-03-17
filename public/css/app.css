@@ -10065,14 +10065,15 @@ body {
 }
 
 .btn-outline-blue-light {
-  color: var(--blue-light);
+  background-color: #004a8f;
+  color: var(--blue-dark);
   border: 2px solid var(--blue-light);
   font-weight: 600;
 }
 
 .btn-outline-blue-light:hover {
-  background-color: var(--blue-light);
-  color: var(--aqua);
+  background-color: var(--light);
+  color: var(--white);
 }
 
 .text-blue-dark {

@@ -2,7 +2,7 @@
 <div class="container mt-5 mb-5">
   <div class="row mt-5 ">
     <div class="col-12 mt-5">
-      <h2 class="text-green display-4 text-center font-italic mt-4">Inserisci <span class="font-weight-bold">annuncio</span></h2>
+      <h2 class="text-green display-4 text-center font-italic mt-4">Inserisci <span class="font-weight-bold text-light1">annuncio</span></h2>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
                          value="{{$uniqueSecret}}">
                          
                           <div  class="mb-3">
-                            <label for="category" class="form-label">Categoria</label>
+                            <label for="category" class="form-label font-weight-bold">Categoria</label>
                             <select class="form-select form-control" name="category" id="category" >
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}">
@@ -29,7 +29,7 @@
                           </div>
 
                         <div class="mb-3">
-                          <label for="title" class="form-label">Titolo</label>
+                          <label for="title" class="form-label font-weight-bold">Titolo</label>
                           <input type="text" class="form-control" @error('title') is-invalid @enderror value="{{old('title')}}" id="title" name="title"  autofocus>
                           @error('title')
                             <span class="" role="alert">
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="price" class="form-label">Prezzo</label>
+                          <label for="price" class="form-label font-weight-bold">Prezzo</label>
                           <input type="text" class="form-control" @error('price') is-invalid @enderror value="{{old('price')}}" id="price" name="price"  autofocus>
                           @error('price')
                             <span class="" role="alert">
@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="mb-3">
-                          <label for="body" class="form-label">Descrizione</label>
+                          <label for="body" class="form-label font-weight-bold">Descrizione</label>
                           <textarea class="form-control" @error('body') is-invalid @enderror name="body" id="body" cols="30" rows="10"  autofocus>{{old('body')}}</textarea>
                           @error('body')
                               <span class="" role="alert">
@@ -58,7 +58,7 @@
                           @enderror
                         </div>
                         <div class="form-group row">
-                          <label for="images" class="col-md-12 col-form-label text-md-left">Immagini</label>
+                          <label for="images" class="col-md-12 col-form-label text-md-left font-weight-bold">Immagini</label>
                             <div class="col-md-12">
                               <div class="dropzone" id="drophere"></div>
                                @error('images')
@@ -68,7 +68,7 @@
                                @enderror
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-outline-blue-dark">Inserisci annuncio</button>
+                        <button type="submit" class="btn btn-outline-blue-light mt-3">Inserisci annuncio</button>
                     </form>
             </div>
         </div>

@@ -62,7 +62,7 @@
             <!--Grid column-->
             <div class="col-auto">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-outline-blue-dark mb-4">
+              <button type="submit" class="btn btn-outline-blue-light mb-4">
                 Subscribe
               </button>
             </div>
@@ -105,45 +105,45 @@
                 <a href="#!" class="text-white">Mappa del sito</a>
               </li>
             </ul>
+          </div>
 
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Lingue</h5>
-
             <ul class="list-unstyled mb-0">
-              
               <li>
                 <form action="{{route('locale','it')}}" method="POST">
                   @csrf
                   <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
-                    <span class="flag-icon flag-icon-it"></span>
+                    <span class="flag-icon flag-icon-it "></span>
+                    <span class="text-white pl-2">Italiano</span> 
                   </button>
                 </form>
               </li>
+
               <li>
                 <form action="{{route('locale','en')}}" method="POST">
                   @csrf
                   <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
                     <span class="flag-icon flag-icon-gb"></span>
+                    <span class="text-white pl-2">Inglese</span> 
                   </button>
                 </form>
-                  
               </li>
+                
               <li>
-                <form action="{{route('locale','es')}}" method="POST">
+                <form action="{{route('locale','es')}}" method="POST" class="ml-3">
                   @csrf
-                  <button type="submit" class="btn btn-link" style="background-color: transparent; border:none;">
+                  <button type="submit" class="btn btn-link" style="background-color:transparent; border:none;">
                     <span class="flag-icon flag-icon-es"></span>
+                    <span class="text-white pl-2">Spagnolo</span> 
                   </button>
                 </form>
               </li>
-             
+            
             </ul>
-
-          </div>          
+          </div>
+                                
         </div>
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          
-        </div>          
-      </div>
         <!--Grid row-->
       </section>
       <!-- Section: Links -->
@@ -153,7 +153,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" >
       © 2020 Copyright:
-      <a class="text-blue-dark" href="https://mdbootstrap.com/">Top_team.com</a>
+      <a class="text-blue-dark" href="">Top_team.com</a>
     </div>
     <!-- Copyright -->
   </footer>
