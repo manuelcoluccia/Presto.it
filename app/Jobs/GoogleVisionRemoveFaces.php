@@ -22,7 +22,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
 
     public function __construct($announcement_image_id)
     {
-        $this->$announcement_image_id = $announcement_image_id;
+        $this->announcement_image_id = $announcement_image_id;
     }
 
     /**
@@ -55,9 +55,9 @@ class GoogleVisionRemoveFaces implements ShouldQueue
             }
             $w = $bounds[2][0] - $bounds[0][0];
             $h = $bounds[2][1] - $bounds[0][1];
-            
+
             $image = Image::load($srcPath);
-            
+
             $image->watermark(base_path('resources/images/smile.png'))
                   ->watermarkPosition('top-left')
                   ->watermarkPadding($bounds[0][0], $bounds[0][1])
@@ -67,7 +67,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
 
                   $image->save($srcPath);
         }
-        
+
         $imageAnnotator->close();
     }
 }
