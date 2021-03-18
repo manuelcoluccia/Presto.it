@@ -1,38 +1,58 @@
 <x-layouts>
-    @if (session('announcement.create.success'))
-        <div class="alert alert-success text-center mt-5">
-            <p class="mt-5">Annuncio creato correttamente</p>
-        </div>
-    @endif
-
-    @if (session('message'))
-    <div class="alert alert-danger text-center mt-5">
-        <p class="mt-5">Accesso non consentito - solo per revisori</p>
-    </div>
-    @elseif (session('message2'))
-    <div class="alert alert-success text-center mt-5">
-        <p class="mt-5">Richiesta inviata</p>
-    </div>
-   @endif
+   
 
     <header class="masthead">
-      <div class="container-fluid h-100">
+        @if (session('announcement.create.success'))
+                <div class="alert alert-success text-center mt-5">
+                    <p class="mt-5">Annuncio creato correttamente</p>
+                </div>
+            @endif
+
+            @if (session('message'))
+                <div class="alert alert-danger text-center mt-5">
+                    <p class="mt-5">Accesso non consentito - solo per revisori</p>
+                </div>
+                @elseif (session('message2'))
+                <div class="alert alert-success text-center mt-5">
+                    <p class="mt-5">Richiesta inviata</p>
+                </div>
+            @endif
+      <div class="container h-100">            
         <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-5 ml-auto">
-                <img class="ecommerce img-fluid" src="./img/logo.png" alt="">
+            <div class="col-12 col-lg-5 d-none d-lg-block ml-auto ml-5">
+                <img class="ecommerce img-fluid" src="./img/e-comme.png" alt="">
             </div>
             <div class="col-12 col-lg-7 text-center mb-5 ">
                 <h1 class="font-italic home-title text-white">{{__('ui.welcome')}}<span class="font-weight-bold text-aqua border-white">Presto!</span></h1>
-                <p class="lead p-4 font-weight-bold">{{__('ui.intestazione')}}</p>
-                <div class="row">
-                    <div class="col-5 col-lg-7">
-                        <form action="{{route('search')}}" method="GET">
-                            <input type="text" name="q"  class="search-bar">
-                            <button class="btn btn-search" type="submit">{{__('ui.bottone')}}</button>
-                        </form>
+                <p class="lead p-4 font-weight-bold font-italic">{{__('ui.intestazione')}}</p>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <form action="{{route('search')}}" method="POST" class="card card-sm">
+                            @csrf
+                            <div class="card-body row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-search h4 text-body"></i>
+                                </div>
+                                <!--end of col-->
+                                
+                                <div class="col">
+                                    <input class="form-control form-control-lg form-control-borderless" type="text" name="q" placeholder="Cosa stai cercando?">
+                                </div>
+                                <button class="btn btn-lg btn-success" type="submit">{{__('ui.bottone')}}</button>
+                                <!--end of col-->
+                                <div class="col-auto">
+                                </div>
+                            </form>
+                                <!--end of col-->
+                            </div>
+                      
                     </div>
+                    <!--end of col-->
                 </div>
-          </div>
+            </div>
+            
+                    
+                
         </div>
       </div>
   </header>

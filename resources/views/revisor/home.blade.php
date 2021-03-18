@@ -67,16 +67,16 @@
             </div>
         </div>
        <div class="row justify-content-center mt-5">
-           <div class="col-md-6 ml-2 text-left">
+           <div class="col-12 col-lg-4 ml-2 text-left">
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reject">
                     Rifiuta
                 </button>
             </div>
-           <div class="col-md-6 text-right ">
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#accept">
-                Accetta
-            </button>
-
+            <div class="col-12 col-lg-4 mr-2 text-right ">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#accept">
+                    Accetta
+                </button>
+                
             </div>
        </div>
     </div>

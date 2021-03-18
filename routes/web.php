@@ -30,7 +30,7 @@ Route::get('/announcement/images',[HomeController::class, 'getImages'])->name('a
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
 Route::get('/announcement/show/{announcement}',[PublicController::class, 'show'])->name('announcement.show');
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
-Route::get('/search',[PublicController::class, 'search'])->name('search');
+Route::post('/search',[PublicController::class, 'search'])->name('search');
 // Route::get('/search/results', [PublicController::class, 'searchResults'])->name('search_results');
 Route::post('/locale/{locale}', [PublicController::class, 'locale'])->name('locale');
 

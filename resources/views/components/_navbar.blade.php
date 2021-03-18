@@ -11,11 +11,11 @@
                  <!-- Left Side Of Navbar -->
                  <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/')}}">Home</a>
+                        <a class="nav-link font-weight-bold" href="{{url('/')}}">Home</a>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            {{__('ui.category_nav')}}
                         </a>
 
@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('announcement.new')}}">{{__('ui.inserisci_annuncio')}}</a>
+                        <a class="nav-link font-weight-bold" href="{{route('announcement.new')}}">{{__('ui.inserisci_annuncio')}}</a>
                     </li>
                 </ul>
     </div>
