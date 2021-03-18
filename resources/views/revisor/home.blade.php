@@ -37,24 +37,26 @@
                                     @foreach($announcement->images as $image)
                                     <div class="row mb-2">
                                         <div class="col-md-4">
+
                                             <img src="{{$image->getUrl(300, 150)}}" class="rounded" alt="">
                                         </div>
                                         <div class="col-md-8">
-                                           Adult: {{$image->adult}} <br>
-                                           Spoof: {{$image->spoof}} <br>
-                                           Medical: {{$image->medical}} <br>
-                                           Violence: {{$image->violence}} <br>
-                                           Racy: {{$image->racy}} <br>
-
-                                           <b>Labels</b><br>
-                                           <ul>
-                                               @if ($image->labels)
-                                                    @foreach ($image->labels as $label)
-                                                        <li>{{$label}}</li>
-                                                    @endforeach                                                   
-                                               @endif
-                                           </ul>
-                                        </div>
+                                            Adult: {{$image->adult}} <br>
+                                            Spoof: {{$image->spoof}} <br>
+                                            Medical: {{$image->medical}} <br>
+                                            Violence: {{$image->violence}} <br>
+                                            Racy: {{$image->racy}} <br>
+ 
+                                            <b>Labels</b><br>
+                                            <ul>
+                                                @if ($image->labels)
+                                                     @foreach ($image->labels as $label)
+                                                         <li>{{$label}}</li>
+                                                     @endforeach                                                   
+                                                @endif
+                                            </ul>
+                                         </div>
+ 
                                     </div>
                                     @endforeach
                                 </div>
