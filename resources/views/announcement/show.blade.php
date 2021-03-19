@@ -2,24 +2,59 @@
 <x-layouts>
 <div class="container mt-5">
     <div class="row mt-5">
-        <div class="col-12 mt-5">
-            <h1 class="text-center">Ecco l'annuncio</h1>
-
+        <div class="col-12 mt-5 mb-4">
+            <h2 class="text-green display-4 text-center font-italic mt-4">Ecco l'<span class="font-weight-bold text-light1">annuncio</span></h2>
         </div>
-
     </div>
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <img src="https://picsum.photos/300/150" alt="">
-
+    <div class="row mt-3">
+        <div class="col-12 col-lg-6">
+            <a href="{{url('/')}}" class="font-weight-bold text-aqua">Home </a>
+            <span> ></span>
+            <a href="{{route('announcement.all')}}" class="font-weight-bold text-aqua">Tutti gli annunci </a>
+            <span> ></span>
+            <a href="{{route('public.announcements.category',[
+                $announcement->category->name,
+                $announcement->category->id
+              ])}}" class="font-weight-bold text-aqua">{{$announcement->category->name}}</a>
         </div>
+    </div>
+    <div class="row">
+
         <div class="col-md-8">
-            <h3>Titolo: </h3><span>{{$announcement->title}}</span>
-            <h3>Descrizione: </h3><span>{{$announcement->body}}</span>
-            <h3>Prezzo: </h3><span>{{$announcement->price}}</span>
-
+          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
         </div>
+    
+        <div class="col-md-4">
+            <hr>
+            <h5 class="my-3 font-weight-bold">Categoria: <span class="font-italic">{{$announcement->category->name}}</span></h5>
+            <hr>
+          <h3 class="my-3 font-weight-bold">{{$announcement->title}}</h3>
+          <h4 class="my-3 font-italic">Prezzo: <span>{{$announcement->price}} €</span></h4>
+          <hr>
+          <h6 class="my-3 mt-5 font-italic">Inserito da: {{$announcement->user->name}}</h6>
+          <h6 class="my-3 mt-2 font-italic ">Inserito il: {{$announcement->created_at->format('d/m/y')}}</h6>
+        </div>
+    
     </div>
+
+        <div class="row mt-3">
+            <div class="col-12 col-md-8">
+                <hr>
+                <h3 class="font-weight-bold">Descrizione: </h3><span>{{$announcement->body}}</span>
+                <hr>
+                <h3 class="font-weight-bold">Inserzionista</h3>
+                <div class="card text-center mt-3">                    
+                    <div class="card-body">
+                      <h5 class="card-title float-left"><i class="fas fa-user fa-2x mr-3"></i>{{$announcement->user->name}}</h5>  
+                    </div>
+                    <div class="card-footer ">
+                        <a href="#" class="btn btn-primary float-right">Contatta</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+       
+
 </div>
 </x-layouts>
 
