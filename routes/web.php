@@ -28,6 +28,7 @@ Route::delete('/announcement/images/remove', [HomeController::class, 'removeImag
 Route::get('/announcement/images',[HomeController::class, 'getImages'])->name('announcement.images');
 
 Route::get('/', [PublicController::class, 'index'])->name('welcome');
+Route::get('/announcement/all',[PublicController::class, 'allAnnouncements'])->name('announcement.all');
 Route::get('/announcement/show/{announcement}',[PublicController::class, 'show'])->name('announcement.show');
 Route::get('/category/{name}/{id}/announcements', [PublicController::class, 'announcementsByCategory'])->name('public.announcements.category');
 Route::post('/search',[PublicController::class, 'search'])->name('search');

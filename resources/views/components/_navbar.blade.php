@@ -14,6 +14,11 @@
                         <a class="nav-link font-weight-bold" href="{{url('/')}}">Home</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold" href="{{route('announcement.all')}}">Annunci</a>
+                    </li>
+
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle font-weight-bold" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                            {{__('ui.category_nav')}}
