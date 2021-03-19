@@ -27,16 +27,14 @@
                     <p class="lead p-4 font-weight-bold font-italic">{{__('ui.intestazione')}}</p>
                     <div class="row justify-content-center ml-5">
                         <div class="col-12  col-lg-12 ml-5  ">
-                            <form action="{{route('search')}}" method="POST">
-                                @csrf
-                                <div class=" row no-gutters ">                              
-                                    <div class="col-12 dimension ">
-                                        <input class=" input-custom form-control-lg form-control-borderless" type="text" name="q" placeholder="Cosa stai cercando?">
-                                        <button class="btn btn-lg btn-custom" type="submit">{{__('ui.bottone')}}</button>
-                                    </div>
-                                </div>
-                            </form>
-                                                
+                                
+                                        {{-- <input class=" input-custom form-control-lg form-control-borderless" type="text" name="q" placeholder="Cosa stai cercando?">
+                                        <button class="btn btn-lg btn-custom" type="submit">{{__('ui.bottone')}}</button> --}}
+                                        <form action="{{route('search')}}" method="POST">
+                                            @csrf
+                                            <input type ="text" name = "q" placeholder = "Cosa stai cercando?">
+                                            <input type ="submit" name = "submit" value = "Cerca">
+                                        </form>              
                         </div>
                     </div>
                 </div>              
@@ -121,7 +119,7 @@
                             <div class="card-body">
                                 <p class="text-dark">
                                     @foreach ($announcement->images as $image)
-                                    <img src="{{$announcemnt->getUrl(300, 150)}}" alt="">
+                                    <img src="{{$image->getUrl(300, 150)}}" alt="">
                                     @endforeach
                                     {{$announcement->body}}
                                 </p>

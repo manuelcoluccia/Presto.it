@@ -186,7 +186,6 @@ body {
     background-color:var(--aqua);
     color: white;
     max-width: 500px;
-  margin: auto;
 
 }
 
@@ -200,4 +199,50 @@ body {
   margin: auto;
 
 }
+
+form{
+    width:90%;
+    padding-right:70px;
+    margin-top:20px;
+    }
+ input[type=text]{
+      width:90%;
+      padding-left: 50px;
+   padding:15px;
+   border:none;
+   font-size:18px;
+   font-family:sans-serif;
+   border-radius:10px 0 0 10px;
+ } 
+ input[type=submit]{
+      padding:15px;
+   border:none;
+   font-size:18px;
+   font-family:sans-serif;
+   background: var(--blue-light);
+   color:white;
+   border-radius:0 10px 10px 0;
+   cursor:pointer;
+   position:absolute;
+ } 
+ 
+ @media screen and (max-width:600px){
+     form{
+       margin:0;
+    
+  }
+      input[type=text]{
+         width:100%;
+      border-radius:5px;
+      padding:10px;
+   }
+   input[type=submit]{
+         border-radius:5px;
+      width:100%;
+      position:static;
+      margin-top:5px;
+      padding:10px;
+   }
+ }
+ 
 
