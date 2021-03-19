@@ -10,7 +10,7 @@
     <title>{{$title ?? 'Presto'}}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
 
 
     <!-- Fonts -->
@@ -20,7 +20,11 @@
      <!-- FontAwesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   
-    
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
     
      <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -36,10 +40,21 @@
     <x-_footer />    
     </div>
     @stack('script')
-     
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
+        
+        $(document).ready(function($){
+
+            $('.announcement-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+                });
+           
+           /*  $('.announcement-carousel').slick({
                 centerMode: true,
                 centerPadding: '60px',
                 slidesToShow: 3,
@@ -63,9 +78,9 @@
                     }
                 }
                 ]
-            });
+            }); */
         })
-        
+     
    </script>         
 
 

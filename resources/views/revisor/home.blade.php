@@ -4,7 +4,7 @@
         <div class="row justify-content-center my-5 mt-5">
             <div class="col-md-10 mt-5">
                 <div class="card">
-                    <div class="card-header font-weight-bold h3 bg-presto-aqua">Annuncio #{{$announcement->id}}</div>
+                    <div class="card-header font-weight-bold h3 bg-presto-aqua text-white">Annuncio #{{$announcement->id}}</div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4"><h3>Utente</h3></div>

@@ -30,11 +30,11 @@
                                 
                                         {{-- <input class=" input-custom form-control-lg form-control-borderless" type="text" name="q" placeholder="Cosa stai cercando?">
                                         <button class="btn btn-lg btn-custom" type="submit">{{__('ui.bottone')}}</button> --}}
-                                        <form action="{{route('search')}}" method="POST">
-                                            @csrf
-                                            <input type ="text" name = "q" placeholder = "Cosa stai cercando?">
-                                            <input type ="submit" name = "submit" value = "Cerca">
-                                        </form>              
+                            <form action="{{route('search')}}" method="POST" class="custom-form">
+                                @csrf
+                                <input type ="text" name = "q" class="input-custom" placeholder = "Cosa stai cercando?">
+                                <input type ="submit" name = "submit" class="input-custom2" value = "Cerca">
+                            </form>              
                         </div>
                     </div>
                 </div>              
@@ -62,38 +62,6 @@
                         <button class='btn btn-card font-weight-bold'>MOTO</button>
                     </div>
                 </div>
-<<<<<<< HEAD
-            @endif
-      <div class="container h-100">            
-        <div class="row h-100 align-items-center">
-            <div class="col-12 col-lg-5 d-none d-lg-block ml-auto ml-5">
-                <img class="ecommerce img-fluid" src="./img/e-comme.png" alt="">
-            </div>
-            <div class="col-12 col-lg-7 text-center mb-5 ">
-                <h1 class="font-italic home-title text-white">{{__('ui.welcome')}}<span class="font-weight-bold text-aqua border-white">Presto!</span></h1>
-                <p class="lead p-4 font-weight-bold font-italic">{{__('ui.intestazione')}}</p>
-                <div class="row justify-content-center">
-                    <div class="col-12 col-md-10 col-lg-8">
-                        <form action="{{route('search')}}" method="POST" class="card card-sm barra-ricerca">
-                            @csrf
-                            <div class="card-body row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <i class="fas fa-search h4 text-body"></i>
-                                </div>
-                                <!--end of col-->
-                                
-                                <div class="col">
-                                    <input class="form-control form-control-lg form-control-borderless" type="text" name="q" placeholder="Cosa stai cercando?">
-                                </div>
-                                <button class="btn btn-lg btn-success" type="submit">{{__('ui.bottone')}}</button>
-                                <!--end of col-->
-                                <div class="col-auto">
-                                </div>
-                            </form>
-                                <!--end of col-->
-                            </div>
-                      
-=======
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3 px-5 px-sm-2">
                     <div class="card card-presto text-white p-3 d-flex flex-column justify-content-between">
                         <h4 class="text-center"><i class="fas fa-mobile-alt fa-3x text-white"></i></h4>
@@ -128,7 +96,6 @@
                     <div class="card card-presto text-white p-3 d-flex flex-column justify-content-between">
                         <h4 class="text-center"><i class="fas fa-laptop fa-3x text-white"></i></h4>
                         <button class='btn btn-card font-weight-bold'>ELETTRONICA</button>
->>>>>>> fff048f3b826e2d7baeec1b9deb4c952376699e9
                     </div>
                 </div>
             </div>
@@ -149,14 +116,20 @@
                     <div class="col-md-8">
                         <div class="card card-annunci ">
                             <div class="card-header font-weight-bold h3 bg-presto-aqua text-light1">{{$announcement->title}}</div>
-                            <div class="card-body">
-                                <p class="text-dark">
+                            <div class=" row card-body">
+                                <div class="col-6">
                                     @foreach ($announcement->images as $image)
-                                    <img src="{{$image->getUrl(300, 150)}}" alt="">
-                                    @endforeach
-                                    {{$announcement->body}}
-                                </p>
-                                <p class="class font-weight-bold text-dark">Prezzo: {{$announcement->price}} €</p>
+                                    @if($announcement->images->first()==$image)
+                                        <img src="{{$image->getUrl(300, 150)}}" alt=""> 
+                                    @endif 
+                                @endforeach
+                                </div>
+                                <div class="col-6">
+                                    <span class="font-italic">{{$announcement->body}}</span>
+                                    <p class="class font-weight-bold text-dark mt-3 ">Prezzo: {{$announcement->price}} €</p>
+                                    <i class="text-dark">Ineserito da: {{$announcement->user->name}} il {{$announcement->created_at->format('d/m/y')}}</i>
+
+                                </div>                               
                             </div>
                             <div class='card-footer d-flex justify-content-between bg-presto-aqua'>
                                 <strong class="text-light1">Categoria: <a class="text-light" href="{{route('public.announcements.category',[
@@ -164,7 +137,6 @@
                                     $announcement->category->id
                                     ])}}"
                                     >{{$announcement->category->name}}</a></strong>
-                                    <i>{{$announcement->created_at->format('d/m/y')}} - {{$announcement->user->name}}</i>
                                     <a class="btn btn-outline-blue-dark" href="{{route('announcement.show',$announcement)}}">Visualizza</a>
                                 </div>
                             </div>

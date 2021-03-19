@@ -196,23 +196,12 @@ body {
 
 }
 
-.dimension{
-    width:100px;
-}
-
-.input-custom{
-    width: 400px;
-    max-width: 500px;
-  margin: auto;
-
-}
-
-form{
+.custom-form{
     width:90%;
     padding-right:70px;
     margin-top:20px;
     }
- input[type=text]{
+ .input-custom[type=text]{
       width:90%;
       padding-left: 50px;
    padding:15px;
@@ -221,7 +210,7 @@ form{
    font-family:sans-serif;
    border-radius:10px 0 0 10px;
  } 
- input[type=submit]{
+ .input-custom2[type=submit]{
       padding:15px;
    border:none;
    font-size:18px;
@@ -234,16 +223,16 @@ form{
  } 
  
  @media screen and (max-width:600px){
-     form{
+     .form-custom{
        margin:0;
     
   }
-      input[type=text]{
+      .input-custom[type=text]{
          width:100%;
       border-radius:5px;
       padding:10px;
    }
-   input[type=submit]{
+   .input-custom2{
          border-radius:5px;
       width:100%;
       position:static;

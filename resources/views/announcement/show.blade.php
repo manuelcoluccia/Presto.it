@@ -20,8 +20,13 @@
     </div>
     <div class="row">
 
-        <div class="col-md-8">
-          <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+       
+        <div class="col-md-7 mt-3 announcement-carousel ">
+            @foreach ($announcement->images as $image)
+            <div>
+                <img src="{{$image->getUrl(600, 400)}}" alt="">    
+            </div> 
+            @endforeach
         </div>
     
         <div class="col-md-4">

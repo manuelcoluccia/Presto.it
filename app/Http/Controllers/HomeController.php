@@ -66,27 +66,34 @@ class HomeController extends Controller
         $removedImages = session()->get("removedimages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
-        foreach ($images as $image){
-           $i = new AnnouncementImage();
-
-           $fileName = basename($image);
-           $newFileName = "public/announcements/{$a->id}/{$fileName}";
-           Storage::move($image,$newFileName);
-
+        if(count($images)<= 0){
+            $i=new AnnouncementImage();
+            $i->announcement_id=$a->id;
+            $i->file= 'resources/images/gatto.jpeg';
+            $i->save();
+        }else{
         
-           $i->file=$newFileName;
-           $i->announcement_id=$a->id;
+            foreach ($images as $image){
+            $i = new AnnouncementImage();
 
-           $i->save();
-           GoogleVisionSafeSearchImage::withChain([
-            new GoogleVisionLabelImage($i->id),
-            new GoogleVisionRemoveFaces($i->id),
-            new ResizeImage($i->file, 300, 150),
-            new ResizeImage($i->file, 400, 300)
-           ])->dispatch($i->id);
+            $fileName = basename($image);
+            $newFileName = "public/announcements/{$a->id}/{$fileName}";
+            Storage::move($image,$newFileName);
 
+            
+            $i->file=$newFileName;
+            $i->announcement_id=$a->id;
+
+            $i->save();
+            GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($i->file, 300, 150),
+                new ResizeImage($i->file, 600, 400)
+            ])->dispatch($i->id);
+
+            }
         }
-
         File::deleteDirectory(storage_path("/app/public/temp/{$uniqueSecret}"));
         return redirect('/')->with('announcement.create.success','ok');
     }
