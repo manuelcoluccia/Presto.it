@@ -27,7 +27,7 @@
                 <p class="lead p-4 font-weight-bold font-italic">{{__('ui.intestazione')}}</p>
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
-                        <form action="{{route('search')}}" method="POST" class="card card-sm">
+                        <form action="{{route('search')}}" method="POST" class="card card-sm barra-ricerca">
                             @csrf
                             <div class="card-body row no-gutters align-items-center">
                                 <div class="col-auto">

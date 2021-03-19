@@ -191,7 +191,14 @@ body {
 }
 
 .form-control-borderless {
-    border: none;
+    border: solid 1px var(--blue-light);
+    border-radius:10px ;
+}
+
+.barra-ricerca {
+    border-radius: 10px;
+    width: 30px;
+    height: 10px;
 }
 
 .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {

@@ -19,9 +19,10 @@
 
      <!-- FontAwesome -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-
-
-    <!-- Styles -->
+  
+    
+    
+     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{$style ?? ''}}
 </head>
@@ -35,5 +36,38 @@
     <x-_footer />    
     </div>
     @stack('script')
+     
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+                ]
+            });
+        })
+        
+   </script>         
+
+
 </body>
 </html>
