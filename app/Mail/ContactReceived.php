@@ -26,7 +26,7 @@ class ContactReceived extends Mailable
      */
     public function build()
     {
-        return $this->from('prestoteam@gmail.com')->view('mail/request_received');
+        return $this->from('prestoteam@gmail.com')->view('mail/contact_received');
 
     }
 }

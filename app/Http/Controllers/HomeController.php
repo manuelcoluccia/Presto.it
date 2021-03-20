@@ -6,17 +6,18 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
+use App\Mail\ContactReceived;
 use App\Mail\RequestReceived;
 use App\Models\AnnouncementImage;
+use App\Jobs\GoogleVisionLabelImage;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
-use App\Http\Requests\AnnouncementRequest;
-use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionRemoveFaces;
+use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
@@ -170,7 +171,7 @@ class HomeController extends Controller
     public function buyerStore(Request $request)
     {
         $contatto = $request->all();
-        Mail::to('amministratore@presto.it')->send(new RequestReceived($contatto));
+        Mail::to('amministratore@presto.it')->send(new ContactReceived($contatto));
         return redirect('/')->with('message2', 'richiesta inviata');
     }
 }

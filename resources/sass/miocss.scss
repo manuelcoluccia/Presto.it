@@ -134,6 +134,11 @@ body {
     
 }
 
+.border-custom {
+    border: solid 2px var(--aqua) ;
+
+}
+
 .card-presto {
     background-color: var(--aqua);
     min-height: 150px;
