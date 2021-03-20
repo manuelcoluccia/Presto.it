@@ -9,9 +9,8 @@
                             <div class="row">
                                 <div class="col-md-4"><h3>Utente</h3></div>
                                 <div class="col-md-8">
-                                    #{{$announcement->user->id}},
-                                    {{$announcement->user->name}},
-                                    {{$announcement->user->email}},
+                                    <span class="font-italic">{{$announcement->user->name}},</span><br>
+                                    <span class="font-italic">{{$announcement->user->email}}</span>
                                 </div>
                             </div>
 
@@ -35,19 +34,32 @@
                                 <div class="col-md-4"><h3>Immagini</h3></div>
                                 <div class="col-md-10">
                                     @foreach($announcement->images as $image)
-                                    <div class="row mb-2">
+                                    <div class="row mb-2 mt-3">
                                         <div class="col-md-4">
-
                                             <img src="{{$image->getUrl(300, 150)}}" class="rounded" alt="">
                                         </div>
-                                        <div class="col-md-8">
-                                            Adult: {{$image->adult}} <br>
-                                            Spoof: {{$image->spoof}} <br>
-                                            Medical: {{$image->medical}} <br>
-                                            Violence: {{$image->violence}} <br>
-                                            Racy: {{$image->racy}} <br>
- 
-                                            <b>Labels</b><br>
+                                        <div class="col-md-4">
+                                            <h4 class="ml-3">Contenuti</h4>
+                                            <ul>
+                                                <li>
+                                                    <span class="font-weight-bold">Adult:</span>  {{$image->adult}} 
+                                                </li>
+                                                <li>
+                                                    <span class="font-weight-bold">Spoof:</span> {{$image->spoof}} 
+                                                </li>
+                                                <li>
+                                                    <span class="font-weight-bold">Medical:</span> {{$image->medical}} 
+                                                </li>
+                                                <li>
+                                                    <span class="font-weight-bold">Violence:</span> {{$image->violence}} 
+                                                </li>
+                                                <li>
+                                                    <span class="font-weight-bold">Racy:</span> {{$image->racy}} 
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h4 class="ml-3">Labels</h4>
                                             <ul>
                                                 @if ($image->labels)
                                                      @foreach ($image->labels as $label)
@@ -55,9 +67,9 @@
                                                      @endforeach                                                   
                                                 @endif
                                             </ul>
-                                         </div>
- 
-                                    </div>
+                                        </div>           
+                                   </div>
+                                   <hr>
                                     @endforeach
                                 </div>
                                 </div>
@@ -81,7 +93,7 @@
        </div>
     </div>
 
-
+    
 
 
     <!-- Modal -->
@@ -130,6 +142,15 @@
         </div>
     </div>
     @else
-        <h1 class="text-center mt-5">Non ci sono annunci da revisionare</h1>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-12 mt-5">
+                    <h1 class="text-center mt-5">Non ci sono annunci da revisionare</h1>
+                    <div style="height: 1000px"></div>
+                </div>
+            </div>
+        </div>
+       
     @endif
+    
 </x-layouts>

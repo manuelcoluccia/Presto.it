@@ -20,7 +20,8 @@ class PublicController extends Controller
     public function allAnnouncements()
     {
         $announcements = Announcement::where('is_accepted',true)
-        ->orderBy('created_at' , 'desc')->get();
+        ->orderBy('created_at' , 'desc')
+        ->paginate(5);
 
         return view('announcement.all' , compact('announcements'));
     }
@@ -45,6 +46,7 @@ class PublicController extends Controller
     public function show(Announcement $announcement){
         return view('announcement.show',compact('announcement'));
     }
+
 
     public function locale($locale){
 

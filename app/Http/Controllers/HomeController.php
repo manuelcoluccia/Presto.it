@@ -157,16 +157,20 @@ class HomeController extends Controller
 
     public function revisorStore(Request $request)
     {
-    //     $name = $request->input('name');
-    //     $email = $request->input('email');
-    //     $body = $request->input('body');
-        // $contatto = [$name,$email,$body];
         $contatto = $request->all();
         Mail::to('amministratore@presto.it')->send(new RequestReceived($contatto));
         return redirect('/')->with('message2', 'richiesta inviata');
     }
 
+    public function buyerContact()
+    {   
+        return view('buyer.contact');
+    }
 
-
-
+    public function buyerStore(Request $request)
+    {
+        $contatto = $request->all();
+        Mail::to('amministratore@presto.it')->send(new RequestReceived($contatto));
+        return redirect('/')->with('message2', 'richiesta inviata');
+    }
 }
