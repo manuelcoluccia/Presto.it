@@ -70,10 +70,11 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item  text-dark" href=""
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item  text-dark" href="{{route('auth.profile')}}">
                             Profilo
+                        </a>
+                        <a class="dropdown-item  text-dark" href="{{route('auth.announcements')}}">
+                            I tuoi annunci
                         </a>
                         <a class="dropdown-item  text-dark" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -81,7 +82,6 @@
                             {{ __('Logout') }}
                         </a>
                         
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>

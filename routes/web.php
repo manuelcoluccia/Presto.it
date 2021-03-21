@@ -29,6 +29,9 @@ Route::delete('/announcement/images/remove', [HomeController::class, 'removeImag
 Route::get('/announcement/images',[HomeController::class, 'getImages'])->name('announcement.images');
 Route::get('/contact/buyer',[HomeController::class, 'buyerContact'])->name('buyer.contact');
 Route::post('contact.store',[HomeController::class, 'buyerStore'])->name('buyer.store');
+Route::get('/auth/profile',[HomeController::class, 'showProfile'])->name('auth.profile');
+Route::get('/auth/announcements',[HomeController::class, 'showUserAnnouncements'])->name('auth.announcements');
+
 
 /* Funzioni pubbliche */
 Route::get('/', [PublicController::class, 'index'])->name('welcome');

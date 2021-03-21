@@ -31,11 +31,20 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    public function showProfile()
+    {   
+        return view('auth.profile');
+    }
+
+    public function showUserAnnouncements()
+    {   
+        /* $users = Auth::user();
+        $announcements = Announcement::all()->get('user_id');
+        $user_announcements = $announcements; 
+        dd($user_announcements);
+        return view('auth.announcements'); */
+    }
+
     public function index()
     {
         return view('home');
