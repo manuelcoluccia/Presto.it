@@ -30,7 +30,7 @@
                             <form action="{{route('search')}}" method="POST" class="custom-form">
                                 @csrf
                                 <input type ="text" name = "q" class="input-custom font-italic" placeholder = "Cosa stai cercando?">
-                                <input type ="submit" name = "submit" class="input-custom2" value = "CERCA">
+                                <input type ="submit" name = "submit" class="input-custom2 font-italic" value = "Cerca">
                             </form>              
                         </div>
                     </div>

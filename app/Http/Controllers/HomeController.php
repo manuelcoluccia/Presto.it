@@ -18,6 +18,7 @@ use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -38,11 +39,8 @@ class HomeController extends Controller
 
     public function showUserAnnouncements()
     {   
-        /* $users = Auth::user();
-        $announcements = Announcement::all()->get('user_id');
-        $user_announcements = $announcements; 
-        dd($user_announcements);
-        return view('auth.announcements'); */
+       
+        return view('auth.announcements');
     }
 
     public function index()
